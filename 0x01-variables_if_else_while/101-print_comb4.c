@@ -20,13 +20,12 @@ int main(void)
 
 				if (num_1 == 7 && num_2 == 8 && num_3 == 9)
 					continue;
-				
+
 				putchar(',');
 				putchar(' ');
 			}
 		}
 	}
-
 	putchar ('\n');
 
 	return (0);
