@@ -1,13 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /*
  * main - entry point, States whether positive, negative or zero.
  *
  * Return: Always 0.
  */
-
 int main(void)
 
 {
