@@ -4,7 +4,7 @@
  * @m: pointer
  * Return: m
  */
-char *string_toupper(char *m);
+char *string_toupper(char *m)
 {
 	int p;
 
