@@ -19,5 +19,5 @@ int _strcmp(char *s1, char *s2)
 		}
 	m++;
 	}
-	retun (0);
+	return (0);
 }
