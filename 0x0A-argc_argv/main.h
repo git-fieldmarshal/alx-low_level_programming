@@ -3,5 +3,7 @@
 
 int main(int argc __attribute((unused)), char *argv[]);
 int main(int argc, char *argv[] __attribute__((unused)));
+int main(int argc, char *argv[]);
+
 
 #endif /*MAIN_H*/
