@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _atoi - program that multiplies two numbers
+ * _atoi - program that coverts string to an integer
  * @s: string to be converted
  * Return: Always 0.
  */
@@ -28,12 +28,12 @@ int _atoi(char *s)
 		if (s[m] >= '0' && s[m] <= '9')
 		{
 			digit = s[m] - '0';
-			if (d % 2)
+			if (n % 2)
 				digit = -digit;
 			o = o * 10 + digit;
 			p = 1;
 
-			if (s[m + 1] < '0' || s[i + 1] > '9')
+			if (s[m + 1] < '0' || s[m + 1] > '9')
 				break;
 			p = 0;
 		}
