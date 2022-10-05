@@ -2,45 +2,43 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * str_concat - a function that concatenates two strings
- * @s1: input one to concat
- * @s2: input two to concat
- * Return: concat of s1 and s2, NULL if fail
+ * alloc_grid - nested loop to make grid
+ * @width: width input
+ * @height: height input
+ * Return: pointer to 2 dim, NULL on fail
  */
-char *str_concat(char *s1, char *s2)
+int **alloc_grid(int width, int height)
 {
-	char *conct;
-	int m, mh;
+	int **mm;
+	int x, y;
 
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
-	m = mh = 0;
-	while (s1[m] != '\0')
-		m++;
-
-	while (s2[mh] != '\0')
-		mh++;
-
-	conct = malloc(sizeof(char) * (m + mh + 1));
-
-	if (conct == NULL)
+	if (width <= 0 || height <= 0)
 		return (NULL);
-	m = mh = 0;
-	while (s1[m] != '\0')
+
+	mm = malloc(sizeof(int *) * height);
+
+	if (mm == NULL)
+		return (NULL);
+
+	for (x = 0; x < height; x++)
 	{
-		conct[m] = s1[m];
-		m++;
+		mm[x] = malloc(sizeof(int) * width);
+
+		if (mm[x] == NULL)
+		{
+			for (; x >= 0; x--)
+				free(mm[x]);
+
+			free(mm);
+			return (NULL);
+		}
 	}
 
-	while (s2[mh] != '\0')
+	for (x = 0; x < height; x++)
 	{
-		conct[m] = s2[mh];
-		m++, mh++;
+		for (y = 0; y < width; y++)
+			mm[x][y] = 0;
 	}
-	conct[m] = '\0';
-	return (conct);
+
+	return (mm);
 }
